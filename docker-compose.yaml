@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  o4n_nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: octupuscloud/o4n_nginx
+    container_name: o4n_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - nginx-config:/etc/nginx
+      - certbot:/etc/letsencrypt
+    restart: always
+
+volumes:
+  nginx-config:
+  certbot:

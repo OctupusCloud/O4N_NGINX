@@ -1,0 +1,10 @@
+# Usa la imagen base de Ubuntu 18.04
+FROM ubuntu:18.04
+
+# Actualiza los repositorios e instala los paquetes necesarios
+RUN apt-get update && apt-get install -y nginx nano certbot vim
+
+EXPOSE 80 443
+
+# Inicia Nginx cuando se ejecute el contenedor
+CMD ["nginx", "-g", "daemon off;"]
