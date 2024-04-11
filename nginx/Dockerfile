@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y nginx nano certbot vim
 EXPOSE 80 443
 
 # Inicia Nginx cuando se ejecute el contenedor
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]  # Se recomienda cargar este comando en el docker-compose.yaml
