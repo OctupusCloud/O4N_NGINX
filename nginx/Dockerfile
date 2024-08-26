@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 
 # Actualiza los repositorios e instala los paquetes necesarios
 RUN apt-get update && apt-get install -y nginx nano certbot vim cron
+COPY  ./cron.log /var/log
 
 EXPOSE 80 443
 
